@@ -9,25 +9,44 @@ import XCTest
 @testable import BoxBoxPersistence
 
 class BoxBoxPersistenceTests: XCTestCase {
+    let persistence = BoxBoxPersistence.shared
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let container = persistence.container
+        let driver = DriverMO(context: container.viewContext)
+        driver.firstName = "George"
+        driver.lastName = "Ananda"
+        driver.code = "ANA"
+        driver.number = "98"
+        driver.nationality = "Indonesian"
+        driver.position = 1
+        
+        let season = SeasonMO(context: container.viewContext)
+        season.title = "2021"
+        
+        let constructor = ConstructorMO(context: container.viewContext)
+        constructor.constructorId = "mercedes"
+        
+        driver.addToSeason(season)
+        driver.addToConstructor(constructor)
+        
+        persistence.save()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        persistence.getDrivers(for: "2021") { result in
+            switch result {
+            case .success(let drivers):
+                if(drivers.first!.lastName == "Ananda") {
+                    XCTAssert(true)
+                }
+            case.failure(let error):
+                XCTAssert(false, error.localizedDescription)
+            }
         }
     }
-
+    
 }

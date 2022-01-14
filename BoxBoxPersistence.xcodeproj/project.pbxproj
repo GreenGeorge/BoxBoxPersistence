@@ -10,6 +10,8 @@
 		9B87A81D27917AF7009B2785 /* BoxBoxPersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B87A81327917AF6009B2785 /* BoxBoxPersistence.framework */; };
 		9B87A82227917AF7009B2785 /* BoxBoxPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B87A82127917AF7009B2785 /* BoxBoxPersistenceTests.swift */; };
 		9B87A82427917AF7009B2785 /* BoxBoxPersistence.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B87A81627917AF6009B2785 /* BoxBoxPersistence.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B87A83127917BE1009B2785 /* BoxBoxPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B87A83027917BE1009B2785 /* BoxBoxPersistence.swift */; };
+		9BD77EC12791C3A7007A6F23 /* BoxboxModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BD77EBF2791C3A7007A6F23 /* BoxboxModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		9B87A81C27917AF7009B2785 /* BoxBoxPersistenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoxBoxPersistenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B87A82127917AF7009B2785 /* BoxBoxPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxBoxPersistenceTests.swift; sourceTree = "<group>"; };
 		9B87A82327917AF7009B2785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B87A83027917BE1009B2785 /* BoxBoxPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxBoxPersistence.swift; sourceTree = "<group>"; };
+		9BD77EC02791C3A7007A6F23 /* BoxboxModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BoxboxModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				9B87A81627917AF6009B2785 /* BoxBoxPersistence.h */,
 				9B87A81727917AF6009B2785 /* Info.plist */,
+				9BD77EBF2791C3A7007A6F23 /* BoxboxModel.xcdatamodeld */,
+				9B87A83027917BE1009B2785 /* BoxBoxPersistence.swift */,
 			);
 			path = BoxBoxPersistence;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 				TargetAttributes = {
 					9B87A81227917AF6009B2785 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					9B87A81B27917AF7009B2785 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -194,6 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BD77EC12791C3A7007A6F23 /* BoxboxModel.xcdatamodeld in Sources */,
+				9B87A83127917BE1009B2785 /* BoxBoxPersistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +350,7 @@
 		9B87A82827917AF7009B2785 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K772APZXFW;
@@ -357,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = GeorgeAnanda.BoxBoxPersistence;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +376,7 @@
 		9B87A82927917AF7009B2785 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K772APZXFW;
@@ -389,6 +401,7 @@
 		9B87A82B27917AF7009B2785 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K772APZXFW;
 				INFOPLIST_FILE = BoxBoxPersistenceTests/Info.plist;
@@ -407,6 +420,7 @@
 		9B87A82C27917AF7009B2785 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K772APZXFW;
 				INFOPLIST_FILE = BoxBoxPersistenceTests/Info.plist;
@@ -453,6 +467,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9BD77EBF2791C3A7007A6F23 /* BoxboxModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9BD77EC02791C3A7007A6F23 /* BoxboxModel.xcdatamodel */,
+			);
+			currentVersion = 9BD77EC02791C3A7007A6F23 /* BoxboxModel.xcdatamodel */;
+			path = BoxboxModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B87A80A27917AF6009B2785 /* Project object */;
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ConstructorMO" representedClassName="ConstructorMO" syncable="YES" codeGenerationType="class">
+        <attribute name="constructorId" optional="YES" attributeType="String"/>
+        <relationship name="driver" maxCount="1" deletionRule="Nullify" destinationEntity="DriverMO" inverseName="constructor" inverseEntity="DriverMO"/>
+        <relationship name="season" toMany="YES" deletionRule="Nullify" destinationEntity="SeasonMO" inverseName="constructors" inverseEntity="SeasonMO"/>
+    </entity>
+    <entity name="DriverMO" representedClassName="DriverMO" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="nationality" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <attribute name="points" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="constructor" toMany="YES" deletionRule="Nullify" destinationEntity="ConstructorMO" inverseName="driver" inverseEntity="ConstructorMO"/>
+        <relationship name="season" toMany="YES" deletionRule="Nullify" destinationEntity="SeasonMO" inverseName="drivers" inverseEntity="SeasonMO"/>
+    </entity>
+    <entity name="SeasonMO" representedClassName="SeasonMO" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="constructors" maxCount="1" deletionRule="Nullify" destinationEntity="ConstructorMO" inverseName="season" inverseEntity="ConstructorMO"/>
+        <relationship name="drivers" maxCount="1" deletionRule="Nullify" destinationEntity="DriverMO" inverseName="season" inverseEntity="DriverMO"/>
+    </entity>
+    <elements>
+        <element name="ConstructorMO" positionX="-45" positionY="0" width="128" height="74"/>
+        <element name="DriverMO" positionX="-18" positionY="27" width="128" height="179"/>
+        <element name="SeasonMO" positionX="9" positionY="54" width="128" height="74"/>
+    </elements>
+</model>
